@@ -1,0 +1,31 @@
+
+<ion-header style="margin-top: 20px;margin-bottom: 20px;">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col size="8">
+          <div>
+            <h6 style="text-align:center;">REKOD</h6>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </ion-toolbar> -->
+</ion-header>
+<!-- <div class="head">
+  <div class="icon">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+  </div>
+  <label class="current">
+    History
+  </label>
+</div> -->
+<ion-content [fullscreen]="true">
+  <iframe class='webPage' frameBorder="0" name="eventsPage" [src]="url | safe" allowfullscreen>
+  </iframe>
+</ion-content>

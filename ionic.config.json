@@ -1,0 +1,7 @@
+{
+  "name": "oralHealth",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

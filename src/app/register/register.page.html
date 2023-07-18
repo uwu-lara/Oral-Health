@@ -1,0 +1,54 @@
+<!-- <ion-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col size="8">
+          <div>
+            <h6 style="text-align:center;">USER REGISTRATION</h6>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <iframe class='webPage' name="eventsPage" [src]="url | safe" allowfullscreen>
+  </iframe>
+</ion-content> -->
+
+<ion-header style="background: url('/assets/images/med_back.png');margin-top: 20px;">
+  <!-- <ion-toolbar style="background: url('/assets/images/med_back.png')"> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col size="8">
+          <div>
+            <h6 style="text-align:center;">USER REGISTRATION</h6>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </ion-toolbar> -->
+</ion-header>
+<div class="head">
+  <div class="icon">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+  </div>
+  <label class="current">
+    History
+  </label>
+</div>
+<ion-content [fullscreen]="true">
+  <iframe class='webPage' frameBorder="0" name="eventsPage" [src]="url | safe" allowfullscreen>
+  </iframe>
+</ion-content>

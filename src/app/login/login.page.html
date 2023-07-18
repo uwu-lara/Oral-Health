@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="image">
+    <!-- <h3 style="color:rgb(255, 255, 255); margin-bottom: 35% ; margin-top: -170px
+    px
+    !important;">{{greeting}}</h3> -->
+    <!-- <img style="width: 50%;" src="../assets/images/MedicaFrendLogo.png"> -->
+    <!-- <h5 style="color:rgb(255, 255, 255); margin-top: -65px; margin-left: -20px;">Better Health</h5> -->
+  </div>
+  <div class="login">
+
+    <label class="label">Enter your Mobile number <br/></label>
+    <div style="display: inline-flex;">
+      <ion-input  class="input" type="text" [(ngModel)]="idNumber" placeholder="123456789"></ion-input>
+    </div>
+
+    <!-- <div id="container" class="list list-inset">
+      <label id="rounded" class="item item-input">
+        <img src="https://dl.dropboxusercontent.com/s/n2s5u9eifp3y2rz/search_icon.png?dl=0">
+        <input type="text" placeholder="Search">
+      </label>
+    </div> -->
+    <div style="margin-top: 46px;">
+      <ion-button id="button" (click)="login()">Open App</ion-button><br />
+      <ion-button id="buttonReg" (click)="register()">New Registration</ion-button>
+    </div>
+  </div>
+</ion-content>

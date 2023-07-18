@@ -1,0 +1,67 @@
+<!-- <ion-view> -->
+  <ion-content class="home-background" style="margin-top: 25px;">
+<!-- <ion-content style="text-align: center;"> -->
+  <div>
+    <!-- <img style="width: 75%; margin-top: 15%; margin-bottom: 20px;" src="../assets/images/bh_landing.jpg"> -->
+  </div>
+  <ion-row style="margin-top:45%;">
+    <ion-col>
+      <img style="width: 75%; box-shadow: 1px 1px 1px 0px rgba(0,0,0,.8);" (click)="goToVideo()" src="../assets/images/video.png">
+      <!-- <p>Video</p> -->
+    </ion-col>
+    <ion-col>
+      <img style="width: 75%; box-shadow: 1px 1px 1px 0px rgba(0,0,0,.8);" (click)="goToRekod()" src="../assets/images/rekod.png">
+      <!-- <p>Schedule</p> -->
+    </ion-col>
+  </ion-row>
+  <div class="bottomIcons">
+    <ion-row style="margin-top:25%;">
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div style="text-align: center;">
+    <ion-label style="font-size: 90px;">{{totalScore}}%</ion-label>
+  </div>
+
+  <!-- 1star -->
+  <div *ngIf="showStar == 1" class="star-rating" (click)="manualNotify()" >
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+  </div>
+  <div *ngIf="showStar == 2" class="star-rating" (click)="manualNotify()" >
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+  </div>
+  <div *ngIf="showStar == 3" class="star-rating" (click)="manualNotify()" >
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+  </div>
+  <div *ngIf="showStar == 4" class="star-rating" (click)="manualNotify()" >
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [class.active]=false></ion-icon>
+  </div>
+  <div *ngIf="showStar == 5" class="star-rating" (click)="manualNotify()" >
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+    <ion-icon name="star" [ngClass]="getStarColor(score, 1)" [class.active]="item.avgRating >= 1"></ion-icon>
+  </div>
+</ion-content>

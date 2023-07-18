@@ -1,0 +1,80 @@
+<ion-header>
+  <!-- <ion-toolbar style="background: url('/assets/images/med_back.png')"> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col size="8">
+          <div>
+            <h6 style="text-align:center;">VIDEO</h6>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </ion-toolbar> -->
+</ion-header>
+<!-- <ion-content [fullscreen]="true"> -->
+
+  <!-- <ion-modal [backdropDismiss]="true" [isOpen]="isModalOpen" style="height:300px; margin-top: 25%;--height: auto;">
+    <ng-template>
+      <div style="text-align:center">
+        <h3>CARA GOSOK GIGI</h3>
+      </div>
+      <div *ngIf="showVideo" class="div" style="text-align: center;">
+        <video width="320" height="240" controls autoplay>
+          <source src="https://inet-tmsolutions.com/medhelpmovie/med_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div style="text-align: center">
+      </div>
+    </ng-template>
+  </ion-modal> -->
+  <!-- <div style="text-align: center; margin-top: 95%;">
+    <button (click)="closeVideo()">Close >></button>
+  </div>
+  <div style="text-align: center; margin-top: 95%;">
+    <button (click)="play()">Play</button>
+  </div> -->
+<!-- </ion-content> -->
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Inline Modal</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-modal [isOpen]="isModalOpen" (willDismiss)="onWillDismiss($event)" style="margin-top: 25%;">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar style="background: #5faedd;">
+          <!-- <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons> -->
+          <ion-title>CARA GOSOK GIGI</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">OK</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div style="text-align: center;">
+          <img style="width: 40%; box-shadow: 1px 1px 1px 0px rgba(0,0,0,.8);margin-top: 1%;" src="../assets/images/video1.png">
+        </div>
+        <div style="text-align: center;">
+          <video width="112%" height="240" controls autoplay  style="margin-top: 10%;margin-left: -20px;">
+            <source [src]="link1" type="video/mp4">
+          </video>
+        </div>
+        <!-- <div style="text-align: center;">
+          <video width="100%" height="240" style="margin-top: 5%;">
+            <source [src]="link2" type="video/mp4">
+          </video>
+        </div> -->
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

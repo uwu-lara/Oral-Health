@@ -1,0 +1,12 @@
+{
+	"appId": "dev.OH.io",
+	"appName": "oralHealth",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"LocalNotifications": {
+			"smallIcon": "medicafrendlogo",
+			"sound": "organfinale.wav"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+    "MyTimetable": [
+        {
+            "Id": 647,
+            "ItemNo": "P0001",
+            "Itemname": "MED1",
+            "itemimage": "https://inet-tmsolutions.com/WCFMedhelphand/images/pill_1.png",
+            "Sessiondate": "04/08/2022",
+            "SessionSlot": "Morning",
+            "Sessiontime": "9:00",
+            "Sessionqty": 1,
+            "BatchNo": "HSB03"
+        },
+        {
+            "Id": 737,
+            "ItemNo": "P0002",
+            "Itemname": "MED2",
+            "itemimage": "https://inet-tmsolutions.com/WCFMedhelphand/images/pill_2.png",
+            "Sessiondate": "04/08/2022",
+            "SessionSlot": "Morning",
+            "Sessiontime": "10:00",
+            "Sessionqty": 1,
+            "BatchNo": "HSB03"
+        }
+    ]
+}
