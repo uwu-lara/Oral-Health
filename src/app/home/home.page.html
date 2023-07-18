@@ -1,0 +1,190 @@
+<!-- <ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">Blank</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<!-- <div>
+  <ion-button expand="full" (click)="show()">Show Notification</ion-button>
+</div> -->
+<!-- <ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons>
+      <div>
+        <ion-icon slot="start" style="color: rgb(0, 0, 0);" name="arrow-back" (click)="myGoBack()"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <!-- <ion-icon slot="start" style="color: rgb(0, 0, 0);" name="arrow-back" (click)="myGoBack()"></ion-icon> -->
+          </div>
+          <!-- <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons> -->
+        </ion-col>
+        <ion-col size="8">
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="icon">
+            <ion-icon slot="start" style="color: rgb(0, 0, 0);" name="arrow-back" (click)="myGoBack()"></ion-icon>
+          </div>
+          <!-- <ion-buttons>
+            <ion-back-button class="back-btn" slot="start"></ion-back-button>
+          </ion-buttons> -->
+        </ion-col>
+        <ion-col size="8">
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <div class="icon">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+  </div> -->
+  <!-- <div class="image">
+    <img style="width: 25%;" src="../assets/images/MedicaFrend_logo.png">
+  </div> -->
+  <!-- <div *ngIf="userName" class="welcome">
+    <ion-label>Hello {{userName}} Welcome to Medical Friend</ion-label>
+  </div> -->
+  <div class="grid-item" style="background-color: white;">
+    <label style="color: black;margin-top: 160px;">{{today | date}}</label>
+    <!-- <ion-datetime presentation="date" [(ngModel)]="today" (ionChange)="onChange($event)"></ion-datetime> -->
+  </div>
+  <div class="body">
+    <div class="sessions">
+
+      <!-- <ion-list *ngIf="filteredTable"> -->
+        <ion-item *ngFor="let session of filteredTable" style="background-color:#f6f6f5; border: 1px solid;border-radius: 15px; border-color: #f6f6f5;">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+              <ion-row>
+                <ion-col size="3">
+                  <h3 style="white-space: pre-line; font-size: 13px;">Name:</h3>
+                </ion-col>
+                <ion-col>
+                  <label style="white-space: pre-line; font-size: small;">{{session.Itemname}}</label>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="3">
+                  <h3 style="white-space: pre-line; font-size: 13px;"></h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h3 style="white-space: pre-line; font-size: 13px;">Quantity:</h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h6 style="white-space: pre-line; font-size: small;">{{session.Sessionqty}}</h6>
+                </ion-col>
+              </ion-row>
+
+
+              <ion-row>
+                <ion-col size="3">
+                  <h3 style="white-space: pre-line; font-size: 13px;"></h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h3 style="white-space: pre-line; font-size: 13px;">Session:</h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h6 style="white-space: pre-line; font-size: small;">{{session.SessionSlot}}</h6>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="3">
+                  <h3 style="white-space: pre-line; font-size: 13px;"></h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h3 style="white-space: pre-line; font-size: 13px;">Session Time:</h3>
+                </ion-col>
+                <ion-col style="background-color: #fbfbfb;">
+                  <h6 style="white-space: pre-line; font-size: small;">{{session.Sessiontime}}</h6>
+                </ion-col>
+              </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ccd">
+              <ion-col class="grid">
+                <div *ngIf="session.taken=='Taken'">
+                  <img (click)="taken(session)" style="width: 50%;" src="../assets/images/taken_old.png">
+                </div>
+                <div *ngIf="!(session.taken=='Taken')">
+                  <img (click)="taken(session)" style="width: 50%;" src="../assets/images/notTaken.png">
+                </div>
+                <p>Taken</p>
+              </ion-col>
+              <ion-col class="grid">
+                <div *ngIf="session.taken=='toNotTaken'">
+                  <img (click)="notTaken(session)" style="width: 50%;" src="../assets/images/taken_old.png">
+                </div>
+                <div *ngIf="!(session.taken=='toNotTaken')">
+                  <img (click)="notTaken(session)" style="width: 50%;" src="../assets/images/notTaken.png">
+                </div>
+                <p>Not Taken</p>
+              </ion-col>
+              <ion-col class="grid">
+                <div *ngIf="session.taken=='Skipped'">
+                  <img (click)="skip(session)" style="width: 50%;" src="../assets/images/taken_old.png">
+                </div>
+                <div *ngIf="!(session.taken=='Skipped')">
+                  <img (click)="skip(session)" style="width: 50%;" src="../assets/images/notTaken.png">
+                </div>
+                <p>Later</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <!-- <ion-item>
+            <ion-thumbnail slot="start">
+              <div *ngIf="!(session.taken=='Taken' || session.taken=='Skipped' || session.taken == 'toNotTaken')">
+                <img (click)="taken(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Taken</a>
+                <img (click)="notTaken(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Not Taken</a>
+                <img (click)="skip(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Later</a>
+              </div>
+              <div *ngIf=" session.taken=='toNotTaken'">
+                <img (click)="taken(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Taken</a>
+                <img (click)="notTaken(session)" id="circle" src="../assets/images/taken.png"> <a style="font-size: small;position: fixed;color: black;">Not Taken</a>
+                <img (click)="skip(session)" id="circle" src=" ../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Later</a>
+              </div>
+              <div *ngIf=" session.taken=='Skipped'">
+                <img (click)="taken(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Taken</a>
+                <img (click)="notTaken(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Not Taken</a>
+                <img (click)="skip(session)" id="circle" src=" ../assets/images/taken.png"> <a style="font-size: small;position: fixed;color: black;">Later</a>
+              </div>
+              <div *ngIf="session.taken=='Taken'">
+                <img (click)="taken(session)" id="circle" src="../assets/images/taken.png"> <a style="font-size: small;position: fixed;color: black;">Taken</a>
+                <img (click)="notTaken(session)"id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Not Taken</a>
+                <img (click)="skip(session)" id="circle" src="../assets/images/pending.png"> <a style="font-size: small;position: fixed;color: black;">Later</a>
+              </div>
+            </ion-thumbnail>
+            <ion-label style="margin-left: 40px;">
+              <h3 style="white-space: pre-line;">Name: {{session.Itemname}}</h3>
+              <p style="white-space: pre-line;">Quantity: {{session.Sessionqty}}</p>
+              <p style="white-space: pre-line;">Session: {{session.SessionSlot}}</p>
+              <p style="white-space: pre-line;">Session time: {{session.Sessiontime}}</p>
+              <p style=" color: red; white-space: pre-line;" *ngIf="session.taken=='Skipped'">Status: {{session.takenTxt}}</p>
+              <p style="color: #259921; white-space: pre-line;" *ngIf="session.taken=='Taken'">Status: {{session.taken}}</p>
+              <p style="color: #000dff; white-space: pre-line;" *ngIf="session.taken=='toNotTaken'">Status: {{session.takenTxt}}</p>
+            </ion-label>
+          </ion-item> -->
+        </ion-item>
+        <!-- </ion-item-sliding> -->
+      <!-- </ion-list> -->
+    </div>
+  </div>
+  <!-- <ion-button (click)="setTimeTableManually()" expand="full">setTimeTableManually</ion-button> -->
+  <!-- <ion-button (click)="getPendings()" expand="full">getPendings</ion-button> -->
+  <ion-button (click)="manualNotify()" expand="full">manualNotify</ion-button>
+  <!-- <ion-button (click)="manualNotifyy()" expand="full">manualNotifyy</ion-button> -->
+</ion-content>
